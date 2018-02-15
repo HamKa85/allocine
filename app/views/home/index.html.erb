@@ -1,0 +1,15 @@
+<html>
+<body>
+<center>
+<div class="col-md-7 col_md_offset-2">
+    <div class="message-show">
+      <h3>Cherche ton film!</h3>
+    	  <%= form_tag("/movies", :method => 'get') do %>
+      	<%= text_field_tag(:title, value = nil) %>
+        <%= submit_tag("Search", class: 'btn btn-custom') %>
+        <% end %>
+    </div>
+  </center>
+</div>
+</body>
+</html>
