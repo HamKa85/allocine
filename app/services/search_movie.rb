@@ -1,20 +1,18 @@
 class SearchMovie
+	def initialize(name)
+		@movie = name
+		Tmdb::Api.key(ENV['MOVIE_API_KEY'])
+	end
 
-  def initialize (title)
-    @title = title
-  end
+	def perform
+		find_movies(@movie)
+	end
 
-  def login_moviedb
-    Tmdb::Api.key(ENV['MOVIEDB_KEY'])
-  end
-
-  def perform (movie)
-    login_moviedb
-    search_movie(@title)
-  end
-
-  def search_movie (title)
-    Tmdb::Movie.find(@title)
-  end
-
+	def find_movies(movie)
+		Tmdb::Search.movie(movie).results.each do |movie|
+			director = Tmdb::Movie.director(movie.id).each do |director|
+				movie[:director] = director.name
+			end
+		end
+	end
 end

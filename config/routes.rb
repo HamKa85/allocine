@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/movies', to: 'movies#search'
- root 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'movies#index'
+  resources :movies
+
+  get "movies/search/:name", to: "movies#search", as: "search"
 end

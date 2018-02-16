@@ -1,48 +1,28 @@
 source 'https://rubygems.org'
 
-# authentification
-#gem 'devise'
-#gem 'pundit'
-
-gem 'rails'
-gem 'bcrypt',         '3.1.11'
+gem 'rails',        '5.1.4'
 gem 'bootstrap-sass', '3.3.7'
-gem 'puma'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'twitter'
-gem 'themoviedb', '~> 1.0', '>= 1.0.1'
+gem 'bcrypt',         '3.1.11'
+gem 'puma',         '3.9.1'
+gem 'sass-rails',   '5.0.6'
+gem 'uglifier',     '3.2.0'
+gem 'coffee-rails', '4.2.2'
+gem 'jquery-rails', '4.3.1'
+gem 'turbolinks',   '5.0.1'
+gem 'jbuilder',     '2.7.0'
+gem 'themoviedb-api'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
-  gem 'rspec-rails'
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'database_cleaner'
-  gem "factory_bot_rails"
-  gem 'simplecov'
+  gem 'dotenv-rails'
 end
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'letter_opener'
-  gem 'web-console'
-  gem 'listen'
-  gem 'spring'
-  gem 'spring-watcher-listen'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'shoulda-matchers'
+  gem 'web-console',           '3.5.1'
+  gem 'listen',                '3.1.5'
+  gem 'spring',                '2.0.2'
+  gem 'spring-watcher-listen', '2.0.1'
 end
 
 group :production do

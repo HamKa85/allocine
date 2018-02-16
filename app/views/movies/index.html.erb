@@ -1,0 +1,13 @@
+<h1> Chercheur de film / Movie finder </h1>
+
+<%= form_tag (movies_path) do %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<p> <%= label_tag 'name', "Tape le nom du film / Tap your movie"  %> </p>
+  	<p> <%= text_field_tag(:name) %> </p>
+  	<p> <%= submit_tag 'Look for my movie!', class: "btn btn-primary"%></p>
+  </div>
+</div>
+
+<% end %>
